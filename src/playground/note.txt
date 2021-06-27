@@ -1,0 +1,54 @@
+- API
+  UI -> User Interface
+    -> Giao diện để người dùng cuối tương tác với ứng dụng của mình
+      1. Ứng dụng React 
+      2. Người dùng cuối -> Truy cập vào trang Web tương tác với Web của mình
+
+        - Nút nhấn Login
+
+  API -> Application Programming Interface 
+    -> "Giao diện" giúp ứng dụng của mình tương tác với với ứng dụng khác
+      1. Ứng dụng khác
+      2. Ứng dụng của mình
+        - Sử dụng API của Ant Design (Props, Function, ...)
+        - Sử dụng API của Google
+        - Sử dụng API của Facebook (URL gửi lên request)
+
+        - Sử dụng API gửi request lên Server
+          Truyền dữ liệu, thông tin -> Gửi lên Server -> Xử lí thông tin 
+            -> Trả về cho mình dữ liệu khác được tính toán theo yêu cầu
+
+          PHP, .NET, Java, Golang, ....
+  
+  HTTP Request 
+    -> Thông qua gói tin gửi lên Server
+    -> Headers -> 
+      1. Gói tin hiểu giống như mình gửi thư cho người
+      2. Headers -> From, To, Dán tem, ...
+  
+  API thường 
+    1. Hoàn toàn có thể hiện thực API Get là gửi dữ liệu lên và tạo mới.
+
+  ResfulAPI -> Tuân theo một số quy tắc nhất định.
+    1. Method Get chỉ dùng cho việc lấy dữ liệu về thôi
+    2. Method POST chỉ dùng cho việc gửi dữ liệu lên và tạo mới một dữ liệu vào đó.
+    3. Method PUT -> chỉnh sửa dữ liệu phía server
+    4. Method DELETE -> để xoá dữ liệu phía server.
+
+  Postman -> Test API
+  API xét về độ bảo mật chia ra làm 2 loại 
+    1. API Public -> Ai có API cũng gọi được
+    2. API Private -> Phải đăng nhập mới gọi được -> Cơ chế Token Based Authentication
+
+
+- Promise, Async
+- Init Project
+
+
+- Layout
+
+- Header: 
+    ChangePassword, Profile, PostHistory, HomePage, PostCreate, PostDetail
+
+- None Header: 
+    Login, Register
