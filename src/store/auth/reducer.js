@@ -1,5 +1,6 @@
 import {LOGIN_SUCCESS} from './actions'
-const initState = { access_token:""};
+import {Storage} from '../../helpers'
+const initState = { access_token:Storage.getToken() || ''};
 export default function authReducer(state = initState, action) {
   switch (action.type) {
     case LOGIN_SUCCESS:

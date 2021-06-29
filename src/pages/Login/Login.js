@@ -1,15 +1,25 @@
 import React from "react";
+import {useHistory} from 'react-router-dom'
 import { LoginHeader, LoginForm } from "../../components/Login";
 import { useDispatch } from "react-redux";
 import {asyncHandleLogin} from '../../store/auth/actions'
 
+import {useNotAuth} from '../../helpers'
+
 export default function Login() {
- 
+  useNotAuth();
+ const history = useHistory()
   const dispatch = useDispatch();
   const handleLogin = async (formData) => {
   const {email, password} = formData;
-  dispatch(asyncHandleLogin({email, password}))
-      
+  dispatch(asyncHandleLogin({email, password})).then(res=>{
+    if(res.ok){
+      history.push('/')
+    }else {
+      console.log(res.error);
+    }
+  })
+  
   };
   return (
     <main>

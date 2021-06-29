@@ -4,6 +4,8 @@ import { actShowLoading, actHideLoading } from "../app/actions";
 
 import {actSetUserInfo} from '../user/actions'
 
+
+import {Storage} from '../../helpers'
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const actLoginSuccess= ({token}) => {
   return {
@@ -27,14 +29,23 @@ export const asyncHandleLogin = ({email, password}) => {
       }else {
         // lay data, luu token
         const token = result.data.token
+        Storage.setToken(token)
         const user = result.data.user
         dispatch(actLoginSuccess({token}));
         dispatch(actSetUserInfo({user}));
+        return {
+          ok:true,
+          
+        }
   
       }
      } catch (err) {
-       console.log('err',err)
-       dispatch(actHideLoading());
+      dispatch(actHideLoading());
+      return {
+        ok:false,
+        error:err
+      }
+       
      }
   }
 }
