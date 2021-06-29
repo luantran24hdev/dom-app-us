@@ -13,6 +13,8 @@ export default function Login() {
   const handleLogin = async (formData) => {
   const {email, password} = formData;
   dispatch(asyncHandleLogin({email, password})).then(res=>{
+
+    console.log('res',res);
     if(res.ok){
       history.push('/')
     }else {
